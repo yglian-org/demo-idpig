@@ -90,7 +90,7 @@ export default {
   },
   created () {
   	// Is there an injected web3 instance?
-    if (false && typeof web3 !== 'undefined') {
+    if (typeof web3 !== 'undefined') {
      var _web3 = new Web3(web3.currentProvider);
     //  var coinbase = _web3.eth.getCoinbase().then(address => {
     //    _web3.eth.getBalance(address, 'pending').then(balance => {
