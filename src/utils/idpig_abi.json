@@ -1,139 +1,279 @@
 [
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "owner",
-      "outputs": [
-        {
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "newOwner",
-          "type": "address"
-        }
-      ],
-      "name": "transferOwnership",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "name": "",
-          "type": "string"
-        },
-        {
-          "indexed": false,
-          "name": "",
-          "type": "string"
-        },
-        {
-          "indexed": false,
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "name": "mylog",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "name": "previousOwner",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "name": "newOwner",
-          "type": "address"
-        }
-      ],
-      "name": "OwnershipTransferred",
-      "type": "event"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_id",
-          "type": "string"
-        },
-        {
-          "name": "_k",
-          "type": "bytes32"
-        },
-        {
-          "name": "_v",
-          "type": "string"
-        }
-      ],
-      "name": "set",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "name": "_id",
-          "type": "string"
-        },
-        {
-          "name": "_k",
-          "type": "bytes32"
-        }
-      ],
-      "name": "get",
-      "outputs": [
-        {
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "name": "_id",
-          "type": "string"
-        }
-      ],
-      "name": "getListKey",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32[]"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    }
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "addrs",
+        "type": "address[]"
+      }
+    ],
+    "name": "removeAddressesFromWhitelist",
+    "outputs": [
+      {
+        "name": "success",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "removeAddressFromWhitelist",
+    "outputs": [
+      {
+        "name": "success",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "addAddressToWhitelist",
+    "outputs": [
+      {
+        "name": "success",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "whitelist",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "addrs",
+        "type": "address[]"
+      }
+    ],
+    "name": "addAddressesToWhitelist",
+    "outputs": [
+      {
+        "name": "success",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "",
+        "type": "string"
+      },
+      {
+        "indexed": true,
+        "name": "",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "SetLog",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "WhitelistedAddressAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "WhitelistedAddressRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "previousOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipRenounced",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "string"
+      },
+      {
+        "name": "_k",
+        "type": "bytes32"
+      },
+      {
+        "name": "_v",
+        "type": "string"
+      }
+    ],
+    "name": "set",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "string"
+      },
+      {
+        "name": "_k",
+        "type": "bytes32"
+      }
+    ],
+    "name": "get",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_id",
+        "type": "string"
+      }
+    ],
+    "name": "getListKey",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
 ]

@@ -29,7 +29,7 @@ const bip39 = require("bip39");
 const hdkey = require("ethereumjs-wallet/hdkey");
 const EthereumTx = require('ethereumjs-tx')
 const Buffer = require('buffer').Buffer
-const node_url = "http://121.40.175.176:8545"
+const node_url = "https://ropsten.infura.io/4evTRHkGM8mbhLg1IisV"
 
 import axios from 'axios'
 
@@ -71,7 +71,7 @@ export default {
                 "params":[
                   {
                     "data": data,
-                    "to": "0x1e5f8ae31198902262eb674dda0a2b844509fa03"
+                    "to": "0x6e0b4a32d8060e037dcb8dfd9f5a25a72110db8a"
                   },
                   "pending"
                 ]
@@ -90,7 +90,7 @@ export default {
   },
   created () {
   	// Is there an injected web3 instance?
-    if (false && typeof web3 !== 'undefined') {
+    if (typeof web3 !== 'undefined') {
      var _web3 = new Web3(web3.currentProvider);
     //  var coinbase = _web3.eth.getCoinbase().then(address => {
     //    _web3.eth.getBalance(address, 'pending').then(balance => {
@@ -107,7 +107,7 @@ export default {
     }
     this.web3 = _web3
 
-    this.contract = new _web3.eth.Contract(IDPig_ABI, '0x1e5f8ae31198902262eb674dda0a2b844509fa03', {
+    this.contract = new _web3.eth.Contract(IDPig_ABI, '0x6e0b4a32d8060e037dcb8dfd9f5a25a72110db8a', {
         from: '0x3a2c14865bf17766f08aa02efcf042ab739bde7e', // default from address
         gasPrice: '20000000000', // default gas price in wei, 20 gwei in this case
         gas: 1000000
@@ -138,7 +138,7 @@ export default {
               "params":[
                 {
                   "data": data,
-                  "to": "0x1e5f8ae31198902262eb674dda0a2b844509fa03"
+                  "to": "0x6e0b4a32d8060e037dcb8dfd9f5a25a72110db8a"
                 },
                 "pending"
               ]
@@ -146,7 +146,7 @@ export default {
           }
         }
 
-        axios.post(node_url, JSON.stringify(request_data), {headers}).then(function(data) {
+        axios.post(node_url, JSON.stringify(request_data), headers).then(function(data) {
             for(let i in data.data) {
               if (i == 0) {
                 that.nonce = data.data[0].result
@@ -184,11 +184,11 @@ export default {
           nonce: that.nonce,
           gasPrice: '0x4A817C800', 
           gasLimit: '0x493E0',
-          to: '0x1e5f8ae31198902262eb674dda0a2b844509fa03', 
+          to: '0x6e0b4a32d8060e037dcb8dfd9f5a25a72110db8a', 
           value: '0x00', 
           data: contract_data,
           // EIP 155 chainId - mainnet: 1, ropsten: 3
-          chainId: 123456
+          chainId: 3
         }
 
         const tx = new EthereumTx(txParams)
